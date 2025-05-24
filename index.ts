@@ -13,9 +13,8 @@ button.addEventListener('click',() => {
         formContainer.style.display = 'none'
         titleContainer.style.display= 'none'
         invitation()
-
-
-    }
+        
+        }
 })
 
 const invitation = () => {
@@ -40,5 +39,29 @@ const invitation = () => {
     inviteMessageContainer.appendChild(buttonContainer)
     container.innerHTML = ""
     container.appendChild(inviteMessageContainer)
+
+
+    noButton.addEventListener('click', () => {
+    const maxX = window.innerWidth - noButton.offsetWidth;
+    const maxY = window.innerHeight - noButton.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noButton.style.position = 'absolute'; // Ensure it can move
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
+});
+
+    yesButton.addEventListener('click',() => {
+        inviteMessageContainer.style.display =  'none'
+        const congratsMessage : HTMLElement = document.createElement('h1')
+        congratsMessage.textContent = 'ممنون از همکاریتون'
+        congratsMessage.classList.add('text-zinc-900','text-2xl')
+        container.appendChild(congratsMessage)
+
+    })
+
 }
+
 
