@@ -1,12 +1,17 @@
 {
   "name": "invitation-card",
   "module": "index.ts",
-  "type": "module",
-  "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "vite": "^6.3.5"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
+    "tailwindcss": "^4.1.7"
   }
 }
